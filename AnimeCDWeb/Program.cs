@@ -1,7 +1,13 @@
+﻿using AnimeCDWeb.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// Thêm dịch vụ DbContext vào container, dùng GetConnectionString với DefaultConnection bên appsettings để lấy chuỗi kết nối
+builder.Services.AddDbContext<ApplicationDbContext>(options
+    =>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); 
 
 var app = builder.Build();
 
