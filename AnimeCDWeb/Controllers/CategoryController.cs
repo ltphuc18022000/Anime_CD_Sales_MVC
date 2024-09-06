@@ -36,7 +36,8 @@ namespace AnimeCDWeb.Controllers
             {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
-                return RedirectToAction("Index"); // chuyển hướng đến action Index
+				TempData["success"] = "Thêm danh mục thành công"; // tao thông báo thêm thành công
+				return RedirectToAction("Index"); // chuyển hướng đến action Index
             }
             return View();
         }
@@ -70,6 +71,7 @@ namespace AnimeCDWeb.Controllers
 			{
 				_db.Categories.Update(obj);
 				_db.SaveChanges();
+				TempData["success"] = "Chỉnh sửa danh mục thành công"; // tạo thông báo chỉnh sửa thành công
 				return RedirectToAction("Index"); // chuyển hướng đến action Index
 			}
 			return View();
@@ -101,6 +103,7 @@ namespace AnimeCDWeb.Controllers
 			}
 			_db.Categories.Remove(obj); // Xóa danh mục
 			_db.SaveChanges(); // Lưu thay đổi 
+			TempData["success"] = "Xóa danh mục thành công"; // Tạo thông báo xóa thành công
 			return RedirectToAction("Index"); // Chuyển hướng đến action Index
 		}
 	}
