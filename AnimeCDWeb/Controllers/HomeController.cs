@@ -1,4 +1,5 @@
-using AnimeCDWeb.Models;
+using AnimeCD.Models;
+
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

@@ -1,4 +1,4 @@
-﻿using AnimeCDWeb.Data;
+﻿using AnimeCD.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

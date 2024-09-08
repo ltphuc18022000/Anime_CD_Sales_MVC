@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace AnimeCDWeb.Migrations
+namespace AnimeCD.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration

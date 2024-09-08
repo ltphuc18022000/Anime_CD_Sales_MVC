@@ -1,7 +1,7 @@
-﻿using AnimeCDWeb.Models;
+﻿using AnimeCD.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AnimeCDWeb.Data
+namespace AnimeCD.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext // Kế thừa từ DbContext Class
     {
@@ -37,7 +37,7 @@ namespace AnimeCDWeb.Data
                     new Category { Id = 18, Name = "Shounen", DisplayOrder = 18 },
                     new Category { Id = 19, Name = "Shoujo", DisplayOrder = 19 },
                     new Category { Id = 22, Name = "Harem", DisplayOrder = 20 }
-            );
+            ); 
         }
     }
 } 

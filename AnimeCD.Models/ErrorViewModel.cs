@@ -1,4 +1,4 @@
-namespace AnimeCDWeb.Models
+namespace AnimeCD.Models
 {
     public class ErrorViewModel
     {

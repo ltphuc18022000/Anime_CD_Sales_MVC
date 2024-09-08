@@ -1,5 +1,5 @@
-﻿using AnimeCDWeb.Data;
-using AnimeCDWeb.Models;
+﻿using AnimeCD.DataAccess.Data;
+using AnimeCD.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
