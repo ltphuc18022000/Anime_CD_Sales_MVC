@@ -25,6 +25,7 @@ namespace AnimeCDRazor_Temp.Pages.Categories
 		{
 			_db.Categories.Add(Category); // thêm Category object vào bảng Categories
 			_db.SaveChanges();
+			TempData["success"] = "Category created successfully"; // thông báo khi thêm thành công
 			return RedirectToPage("Index");
 		}
 	}

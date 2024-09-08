@@ -1,0 +1,16 @@
+﻿@if (TempData["success"] != null) @*Tạo dữ liệu tạm thời "success"*@
+{
+	<script src="~/lib/jquery/dist/jquery.min.js"></script> <!-- Thêm script jQuery -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> <!-- Thêm script thông báo từ Toastr -->
+	<script type="text/javascript">
+		toastr.success('@TempData["success"]');
+	</script>   <!--Hiển thị thông báo thành công -->
+}
+@if (TempData["error"] != null)
+{
+	<script src="~/lib/jquery/dist/jquery.min.js"></script> <!-- Thêm script jQuery -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> <!-- Thêm script thông báo từ Toastr -->
+	<script type="text/javascript">
+		toastr.success('@TempData["error"]');
+	</script>
+}
