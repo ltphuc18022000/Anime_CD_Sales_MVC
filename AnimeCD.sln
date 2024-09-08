@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeCDWeb", "AnimeCDWeb\AnimeCDWeb.csproj", "{D9C3BA15-0EBE-4219-8F3E-39A6272B2C81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimeCDWeb", "AnimeCDWeb\AnimeCDWeb.csproj", "{D9C3BA15-0EBE-4219-8F3E-39A6272B2C81}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimeCDRazor_Temp", "AnimeCDRazor_Temp\AnimeCDRazor_Temp.csproj", "{0D9550D5-DBA9-4A6A-86D9-686BBB9B1DF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D9C3BA15-0EBE-4219-8F3E-39A6272B2C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9C3BA15-0EBE-4219-8F3E-39A6272B2C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9C3BA15-0EBE-4219-8F3E-39A6272B2C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D9550D5-DBA9-4A6A-86D9-686BBB9B1DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D9550D5-DBA9-4A6A-86D9-686BBB9B1DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D9550D5-DBA9-4A6A-86D9-686BBB9B1DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D9550D5-DBA9-4A6A-86D9-686BBB9B1DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

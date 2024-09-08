@@ -11,11 +11,11 @@ namespace AnimeCDWeb.Controllers
 
         public CategoryController(ApplicationDbContext db)
         {
-            _db = db;
+            _db = db; // lấy ApplicationDbContext bằng Dependency Injection
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _db.Categories.ToList();
+            List<Category> objCategoryList = _db.Categories.ToList(); // truy xuất tất cả dữ liệu từ bảng Categories
             return View(objCategoryList); // chuyển du lieu obj tu Controller sang View
         }
         public IActionResult Create()

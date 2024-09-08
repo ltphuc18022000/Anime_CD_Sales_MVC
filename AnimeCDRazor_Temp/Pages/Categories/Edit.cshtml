@@ -1,0 +1,43 @@
+﻿@page
+@model AnimeCDRazor_Temp.Pages.Categories.EditModel
+
+
+<form method="post">
+	<input asp-for="Category.Id" hidden /> <!-- thêm thuôc tính ẩn nếu edit 1 bản nhưng ID ở mục obj ko hiện -->
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Edit Category</h2>
+			<hr /> <!-- Thêm đường kẻ ngang -->
+		</div>
+		@* Dùng "All" là hiển thị tất cả dạng lỗi bao gồm lỗi thuộc tính, "ModelOnly" là hiển thị lỗi trong model*@
+		@* <div asp-validation-summary="ModelOnly"></div> <!-- Thêm thông báo lỗi tổng hợp trên bảng chung --> *@
+		<div class="mb-3 row p-1">
+			<label asp-for="Category.Name" class="p-0"></label>
+			<input asp-for="Category.Name" class="form-control" /> <!-- Dùng tag helpers -->
+			<span asp-validation-for="Category.Name" class="text-danger"></span> <!-- Thêm thông báo lỗi -->
+		</div>
+		<div class="mb-3 row p-1">
+			<label asp-for="Category.DisplayOrder" class="p-0"></label> <!-- Thêm DisplayOrder -->
+			<input asp-for="Category.DisplayOrder" class="form-control" /> <!-- Dùng input tag Helper thêm DisplayOrder -->
+			<span asp-validation-for="Category.DisplayOrder" class="text-danger"></span> <!-- Thêm thông báo lỗi -->
+		</div>
+
+		<div class="row">
+			<div class="col-6 col-md-3">
+				<button type="submit" class="btn btn-success form-control">Update</button>
+			</div>
+			<div class="col-6 col-md-3">
+				<a asp-page="/categories/index" class="btn btn-outline-dark form-control">
+					Back to List
+				</a>
+			</div>
+		</div>
+
+	</div>
+</form>
+
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" /> <!-- Thêm script validation từ folder Shared -->
+	}
+}
