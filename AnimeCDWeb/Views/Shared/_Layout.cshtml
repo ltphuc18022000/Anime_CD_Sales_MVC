@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AnimeCDWeb</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />  @*Đổi bootstrap.min mặc định sang bootstrap của bootswatch*@
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
     <link rel="stylesheet" href="~/AnimeCDWeb.styles.css" asp-append-version="true" />
     @*Copy CDN từ icons.getbootstrap, them thu vien icon*@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
@@ -14,10 +14,11 @@
     @*Thêm thư viện hiệu ứng thông báo từ Toastr*@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-expand-lg bg-dark border-bottom box-shadow mb-3" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-expand-lg bg-primary border-bottom box-shadow mb-3" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AnimeCDWeb</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -48,7 +49,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer bg-dark text-muted" data-bs-theme="dark">
+    <footer class="border-top footer bg-primary text-muted" data-bs-theme="dark">
         <div class="container text-center">
             &copy; 2024 - AnimeCDWeb -  Made by <i class="bi bi-heart-fill"></i> PhucLe
         </div>

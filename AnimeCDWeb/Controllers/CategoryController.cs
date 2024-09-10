@@ -1,5 +1,5 @@
-﻿using AnimeCDWeb.Data;
-using AnimeCDWeb.Models;
+﻿using AnimeCD.DataAccess.Data;
+using AnimeCD.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -49,8 +49,9 @@ namespace AnimeCDWeb.Controllers
 				return NotFound();
 			}
 			Category? categoryFromDb = _db.Categories.Find(id); // tìm Category có id trong Database, "?" để kiểm tra xem trường có thể null không
-            //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u=>u.Id==id);
-            //Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id == id).FirstOrDefault();
+
+			//Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u=>u.Id==id); FirstOrDefault trong LinQ expression
+			//Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id == id).FirstOrDefault();
 			if (categoryFromDb == null)
             {
                 return NotFound();
@@ -69,7 +70,7 @@ namespace AnimeCDWeb.Controllers
 
 			if (ModelState.IsValid) // kiểm tra xem dữ liệu nhập vào có hợp lệ không
 			{
-				_db.Categories.Update(obj);
+				_db.Categories.Update(obj); // EF Core sẽ tự động cập nhật dữ liệu vào Database
 				_db.SaveChanges();
 				TempData["success"] = "Chỉnh sửa danh mục thành công"; // tạo thông báo chỉnh sửa thành công
 				return RedirectToAction("Index"); // chuyển hướng đến action Index
