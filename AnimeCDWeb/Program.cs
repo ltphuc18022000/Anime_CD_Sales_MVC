@@ -1,4 +1,6 @@
 ﻿using AnimeCD.DataAccess.Data;
+using AnimeCD.DataAccess.Repository;
+using AnimeCD.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 // Thêm dịch vụ DbContext vào container, dùng GetConnectionString với DefaultConnection bên appsettings để lấy chuỗi kết nối
 builder.Services.AddDbContext<ApplicationDbContext>(options
-    =>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); 
+    =>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(); // Thêm dịch vụ UnitOfWork vào container
 
 var app = builder.Build();
 
@@ -28,6 +32,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+ 
