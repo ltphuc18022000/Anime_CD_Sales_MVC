@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AnimeCD.Models
 {
@@ -20,8 +21,12 @@ namespace AnimeCD.Models
 		[Required]
 		public string Author { get; set; }
 
+        public int CategoryID { get; set; }
+		[ForeignKey("CategoryID")] // Khóa ngoại
+        public Category Category { get; set; }
 
-		[Required]
+
+        [Required]
 		[Display(Name ="Danh sách giá")]
 		[Range(50000, 100000)]
 		public double ListPrice { get; set; }
@@ -40,5 +45,7 @@ namespace AnimeCD.Models
 		[Display(Name = "Giá cho lượt mua 100+")]
 		[Range(50000, 100000)]
 		public double Price100 { get; set; }
+
+
 	}
 }
