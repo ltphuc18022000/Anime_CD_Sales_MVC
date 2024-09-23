@@ -3,6 +3,7 @@ using AnimeCD.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnimeCD.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240922170428_addProductsToDb")]
+    partial class addProductsToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,14 +179,7 @@ namespace AnimeCD.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CategoryID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -209,8 +205,6 @@ namespace AnimeCD.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryID");
-
                     b.ToTable("Products");
 
                     b.HasData(
@@ -218,9 +212,7 @@ namespace AnimeCD.DataAccess.Migrations
                         {
                             Id = 1,
                             Author = "Ochikoshi Tomonori",
-                            CategoryID = 1,
                             Description = "Câu chuyện về một cô thiếu nữ tên Lucy Heartfilia, khao khát của cô là gia nhập Hội Pháp sư nổi tiếng Fairy Tail. Trên đường phiêu lưu, Lucy đã vô tình gặp gỡ Natsu Salamander Dragneel, một thành viên của Fairy Tail, người sở hữu pháp thuật cổ đại Sát Long. Thế rồi Lucy được Natsu giới thiệu vào Hội Pháp sư Fairy Tail và cùng anh chàng này tham gia vô số nhiệm vụ khó khăn nhưng cũng không kém phần thú vị. ",
-                            ImageUrl = "fairytail.jpg",
                             ListPrice = 99.0,
                             Price = 90.0,
                             Price100 = 80.0,
@@ -232,9 +224,7 @@ namespace AnimeCD.DataAccess.Migrations
                         {
                             Id = 2,
                             Author = "Uda Kounosuke",
-                            CategoryID = 2,
                             Description = "Monkey D. Luffy, 1 cậu bé rất thích Đảo hải tặc có ước mơ tìm được kho báu One Piece và trở thành Vua hải tặc - Pirate King. Lúc nhỏ, Luffy tình cờ ăn phải trái quỉ (Devil Fruit) Gomu Gomu, nó cho cơ thể cậu khả năng co dãn đàn hồi như cao su nhưng đổi lại cậu sẽ không bao giờ biết bơi. Hãy cùng theo dõi xem liệu Luffy có thể trở thành đạt được kho báu One Piece và trở thành Vua Hải Tặc không nhé.",
-                            ImageUrl = "onepiece.jpg",
                             ListPrice = 40.0,
                             Price = 30.0,
                             Price100 = 20.0,
@@ -246,9 +236,7 @@ namespace AnimeCD.DataAccess.Migrations
                         {
                             Id = 3,
                             Author = "Julian Button",
-                            CategoryID = 3,
                             Description = "Fable là một tay sát thủ lão luyện giỏi nhất trong lĩnh vực của mình. Tuy nhiên, anh ta đã giết rất nhiều người đến nỗi ông chủ của anh ta yêu cầu anh ta phải nằm im trong một thời gian. ",
-                            ImageUrl = "thefable.jpg",
                             ListPrice = 55.0,
                             Price = 50.0,
                             Price100 = 35.0,
@@ -260,9 +248,7 @@ namespace AnimeCD.DataAccess.Migrations
                         {
                             Id = 4,
                             Author = "Abby Muscles",
-                            CategoryID = 4,
                             Description = "Kỷ nguyên của các cuộc đại chiến nảy lửa giữa 5 chủng tộc để giành quyền bá chủ mặt đất đã kết thúc với phần thắng thuộc về nhân loại do Anh Hùng Sid lãnh đạo. Tuy nhiên, thế giới đó bất ngờ bị ”thay đổi” trước sự chứng kiến của chàng trai tên Kai. Trong thế giới đó, Kai đã thấy Anh Hùng Sid không còn tồn tại, dẫn đến sự thất bại của con người trong trận đại chiến giữa 5 chủng tộc.",
-                            ImageUrl = "naze.jpg",
                             ListPrice = 70.0,
                             Price = 65.0,
                             Price100 = 55.0,
@@ -274,9 +260,7 @@ namespace AnimeCD.DataAccess.Migrations
                         {
                             Id = 5,
                             Author = "Ron Parker",
-                            CategoryID = 5,
                             Description = "The New Gate là một game online thu hút hàng nghìn người chơi tham gia. Khi trò game trở thành một nơi chết chóc, nhờ vào Shin, một trong người chơi mạnh nhất đá đánh bại chùm cuối và giải thoát mọi người. Nhưng sau khi chiến thắng, Shin bị một tia sáng chiếu vào và kéo anh ta tới thế giới game đó 500 năm sau và bị mắc kẹt luôn trong đó. ",
-                            ImageUrl = "thenewgate.jpg",
                             ListPrice = 30.0,
                             Price = 27.0,
                             Price100 = 20.0,
@@ -288,9 +272,7 @@ namespace AnimeCD.DataAccess.Migrations
                         {
                             Id = 6,
                             Author = "Laura Phantom",
-                            CategoryID = 6,
                             Description = "Phim dựa trên 6 câu chuyện: Lọ Lem, Cô Bé Quàng Khăn Đỏ, Hansel và Gretel, Người Thợ Giày và Lũ Yêu Tinh, Những Nhạc Sĩ Thành Bremen, Người Thổi Sáo Thành Hamelin.",
-                            ImageUrl = "grimkumikyoku.jpg",
                             ListPrice = 25.0,
                             Price = 23.0,
                             Price100 = 20.0,
@@ -298,17 +280,6 @@ namespace AnimeCD.DataAccess.Migrations
                             Serial = "FOT000000001",
                             Title = "Grimm Kumikyoku"
                         });
-                });
-
-            modelBuilder.Entity("AnimeCD.Models.Product", b =>
-                {
-                    b.HasOne("AnimeCD.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }
