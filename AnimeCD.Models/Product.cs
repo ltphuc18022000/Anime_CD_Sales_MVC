@@ -21,11 +21,7 @@ namespace AnimeCD.Models
 		[Required]
 		public string Author { get; set; }
 
-        public int CategoryID { get; set; }
-		[ForeignKey("CategoryID")] // Khóa ngoại
-        public Category Category { get; set; }
-
-
+  
         [Required]
 		[Display(Name ="Danh sách giá")]
 		[Range(50000, 100000)]
@@ -46,6 +42,10 @@ namespace AnimeCD.Models
 		[Range(50000, 100000)]
 		public double Price100 { get; set; }
 
+        public int CategoryID { get; set; }
+        [ForeignKey("CategoryID")] // Khóa ngoại
+        public Category Category { get; set; }
 
-	}
+		public string ImageUrl { get; set; }
+    }
 }

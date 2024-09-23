@@ -2,7 +2,9 @@
 using AnimeCD.DataAccess.Repository.IRepository;
 using AnimeCD.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace AnimeCDWeb.Areas.Admin.Controllers
 {
@@ -18,6 +20,13 @@ namespace AnimeCDWeb.Areas.Admin.Controllers
         public IActionResult Index()
         {
             List<Product> objProductList = _unitOfWork.Product.GetAll().ToList(); // truy xuất tất cả dữ liệu từ bảng Categories
+            // phép chiếu trong EF Core là cách chúng ta chọn một số cột cụ thể từ một bảng hoặc nhiều bảng và trả về dữ liệu dưới dạng một đối tượng mới hoặc một danh sách các đối tượng mới.
+            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category
+                .GetAll().Select(u => new SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString()
+            }); // Lấy tất cả danh mục từ bảng Categories, chuyển thành SelectListItem
             return View(objProductList); // chuyển du lieu obj tu Controller sang View
         }
         public IActionResult Create()
